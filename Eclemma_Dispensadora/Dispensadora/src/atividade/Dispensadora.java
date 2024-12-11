@@ -1,6 +1,5 @@
 package atividade;
 
-
 public class Dispensadora {
     private int[] cedulasDisponiveis; // Quantidade de cédulas disponíveis para cada valor
     public static final int[] VALORES_CEDULAS = {100, 50, 20, 10, 5, 2}; // Valores das cédulas, em ordem decrescente

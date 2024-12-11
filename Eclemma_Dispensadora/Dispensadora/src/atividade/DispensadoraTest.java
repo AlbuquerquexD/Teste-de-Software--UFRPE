@@ -17,8 +17,8 @@ class DispensadoraTest {
 	    public void testDispensarValorValido() throws NaoEhPossivelDispensarValorException {
 	        int[] cedulasInicialTest2 = {10, 10, 10, 10, 10, 10};
 	        Dispensadora dispensadora2 = new Dispensadora(cedulasInicialTest2);
-	        int[] esperado = {2, 1, 1, 1, 1, 1}; // 2x100, 1x50, 1x20, 1x10, 1x5, 1x2 = 287 reais
-	        int[] resultado = dispensadora2.dispensar(287);
+	        int[] esperado = {1, 1, 1, 1, 1, 1}; // 1x100, 1x50, 1x20, 1x10, 1x5, 1x2 = 287 reais
+	        int[] resultado = dispensadora2.dispensar(187);
 	        assertArrayEquals(esperado, resultado);
 	    }
 	    
@@ -27,8 +27,20 @@ class DispensadoraTest {
 	    	int [] cedulasInicialTest3 = {10,10,10,10,10,10};
 	    	Dispensadora dispensadora3 = new Dispensadora(cedulasInicialTest3);
 	        assertThrows(NaoEhPossivelDispensarValorException.class, () -> {
-	            dispensadora3.dispensar(288);  // Tentando dispensar 288, que não é possível com as cédulas fornecidas
+	            dispensadora3.dispensar(188);  // Tentando dispensar 188, que não é possível com as cédulas fornecidas
 	        });
 	    }
-
+	    
+	    @Test
+	    public void TestValorCedulasInvalida () throws IllegalArgumentException {
+	    	int [] cedulasInicialTest4 = {10,10,10,10,10};
+	    	assertThrows(IllegalArgumentException.class, () -> {
+	    		 Dispensadora dispensadora4 = new Dispensadora(cedulasInicialTest4); //Colocando quantidade de cedulas menos que o valor de entrada
+	    		 dispensadora4.dispensar(188);	
+	    	});
+	    	
+	    	
+	    	
+	    }
+	    
 }
