@@ -35,12 +35,29 @@ class DispensadoraTest {
 	    public void TestValorCedulasInvalida () throws IllegalArgumentException {
 	    	int [] cedulasInicialTest4 = {10,10,10,10,10};
 	    	assertThrows(IllegalArgumentException.class, () -> {
-	    		 Dispensadora dispensadora4 = new Dispensadora(cedulasInicialTest4); //Colocando quantidade de cedulas menos que o valor de entrada
+	    		 Dispensadora dispensadora4 = new Dispensadora(cedulasInicialTest4); //Colocando quantidade de cedulas menor que o valor esperado de entrada
 	    		 dispensadora4.dispensar(188);	
 	    	});
 	    	
-	    	
-	    	
 	    }
 	    
+    	@Test
+    	public void TestCedulasZeradas () throws NaoEhPossivelDispensarValorException {
+    		int [] cedulasIniciaisTest5 = {0,0,0,0,0,0};
+    		Dispensadora dispensadora5 = new Dispensadora(cedulasIniciaisTest5);
+    		assertThrows(NaoEhPossivelDispensarValorException.class, () -> {
+    			dispensadora5.dispensar(187); // Cedulas zeradas, porém valores válidos. Para testar todas possibilidades dos comando de decisão.
+    			
+    		});
+    	}
+	    
+    	@Test
+    	public void TestValorBaixoCedulasValidas () throws NaoEhPossivelDispensarValorException {
+    		int [] cedulasIniciaisTest6 = {10,10,10,10,10,10};
+    		Dispensadora dispensadora6 = new Dispensadora(cedulasIniciaisTest6);
+    		assertThrows(NaoEhPossivelDispensarValorException.class, () -> {
+    			dispensadora6.dispensar(1);
+    		})
+    		
+;    	}
 }
