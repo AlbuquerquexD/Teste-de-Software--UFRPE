@@ -10,11 +10,11 @@ Instruções:
 
 ### Instruções:
 
-A pasta indicada contém uma classe chamada `Dispensadora` que simula uma máquina dispensadora de itens.
+* A pasta indicada contém uma classe chamada `Dispensadora` que simula uma máquina dispensadora de moedas.
 
 #### Objetivo:
-Criar testes automatizados para verificar o funcionamento correto dos métodos dessa classe, cobrindo o máximo possível do código.
+* Criar testes automatizados para verificar o funcionamento correto dos métodos dessa classe, cobrindo o máximo possível do código.
 
 ### Tecnologias Utilizadas:
-- Java com JUnit 5 e EclEmma para medir a cobertura.
+* Java com JUnit 5 e EclEmma para medir a cobertura.
 
