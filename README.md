@@ -6,7 +6,7 @@ Instruções:
 
 * teste que você vai criar devem chamar o método IMC com valores de sua escolha e verificar se o resultado está conforme esperado. 
 
-## Atividade: Testes na Dispensadora
+## 2- Atividade: Testes na Dispensadora
 
 ### Instruções:
 
